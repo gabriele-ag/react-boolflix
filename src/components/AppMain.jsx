@@ -76,7 +76,7 @@ function Main() {
                 <div>
                     {tvseries.map((curSerie, index) => (
                         <div key={index}>
-                            
+                            <img src={`${apiImg}/w342${curSerie.poster_path}`} alt="img-movie" />
                             <h2>Nome della serie tv: {curSerie.name}</h2>
                             {curSerie.name !== curSerie.original_name && (
                                 <p>Titolo originale: {curSerie.original_name}</p>
