@@ -69,7 +69,7 @@ function Main() {
                                 <p>Titolo originale: {curMovie.original_title}</p>
                             )}
                             <FlagImg language={curMovie.original_language}/>
-                            <p>Voto: {curMovie.vote_average}</p>
+                            <p>Voto: {curMovie.vote_average / 2}</p>
                         </div>
                     ))}
                 </div>
@@ -82,7 +82,7 @@ function Main() {
                                 <p>Titolo originale: {curSerie.original_name}</p>
                             )}
                             <FlagImg language={curSerie.original_language}/>
-                            <p>Voto: {curSerie.vote_average}</p>
+                            <p>Voto: {Math.ceil(curSerie.vote_average / 2)}</p>
                         </div>
                     ))}
                 </div>
