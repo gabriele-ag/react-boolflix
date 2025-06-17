@@ -4,9 +4,10 @@ import axios from "axios"
 
 function Main() {
     const [movie, setMovie] = useState([])
+    const [search, setSearch] = useState("")
 
     const apiKey="05f25a38e80d3f281215e0480061a071"
-    // const apiUrl="https://api.themoviedb.org/3/search/movie"
+    const apiUrl="https://api.themoviedb.org/3/search/movie"
 
     useEffect(() => {
             axios
@@ -18,11 +19,28 @@ function Main() {
                 })
     }, [])
 
+    const handleInput = (event) => {
+        event.preventDefault()
+        setSearch(event.target.value)
+    }
+
+
 
     return (
         <main>
-            <label>Cerca il tuo film</label>
-            <input></input>
+            <form onSubmit={handleInput}>
+                <label>Cerca il tuo film</label>
+                <input
+                type=""
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Search Movie"
+                ></input>
+                <button type="submit">Cerca</button>
+            </form>
+            <div>
+                {movie.map((curFilm))}
+            </div>
         </main>
     )
 

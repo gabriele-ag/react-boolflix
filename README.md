@@ -28,6 +28,7 @@ uro
 Milestone 0:
 Progettare la struttura del global state sulla linea degli esercizi svolti nei giorni
 precedenti.
+
 Milestone 1:
 Creare un layout base con una searchbar (una input e un button) in cui possiamo
 scrivere completamente o parzialmente il nome di un film. Possiamo, cliccando il
@@ -38,6 +39,7 @@ film trovato:
 2. Titolo Originale
 3. Lingua
 4. Voto
+
 Milestone 2:
 Trasformiamo la stringa statica della lingua in una vera e propria bandiera della
 nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della
