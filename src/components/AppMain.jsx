@@ -21,42 +21,43 @@ function Main() {
                     <button className="hero-button-2">Guarda ora</button>
                 </div>
             </section>
-            <div className="container">
 
-                {/* <SearchContent
-                search={search}
-                input={handleInput}
-                click={handleSearch}/> */}
-
-                <div>
-                    {movie.length > 0 ? (movie.map((curMovie, index) => (
-                        <div key={index}>
-                            <img src={`${apiImg}/w342${curMovie.poster_path}`} alt="img-movie" />
-                            <h2>Nome del film: {curMovie.title}</h2>
-                            {curMovie.title !== curMovie.original_title && (
-                            <p>Titolo originale: {curMovie.original_title}</p>
-                            )}
-                            <FlagImg language={curMovie.original_language}/>
-                            <StarVote vote={curMovie.vote_average}/>
-                        </div>
+            <section className="section-search">
+                <div className="card-box container flex">
+                    <div>
+                        {movie.length > 0 ? (movie.map((curMovie, index) => (
+                            <div className="card" key={index}>
+                                <img src={`${apiImg}/w342${curMovie.poster_path}`} alt="img-movie" />
+                                <div className="card-onhover">
+                                    <h2>Nome del film: {curMovie.title}</h2>
+                                    {curMovie.title !== curMovie.original_title && (
+                                    <p>Titolo originale: {curMovie.original_title}</p>
+                                    )}
+                                    <FlagImg language={curMovie.original_language}/>
+                                    <StarVote vote={curMovie.vote_average}/>
+                                </div>
+                            </div>
+                            ))) : search && (<p>Nessun risultato</p>)
+                        }
+                    </div>
+                    <div>
+                        {tvseries.length > 0 ? (tvseries.map((curSerie, index) => (
+                            <div className="card" key={index}>
+                                <img src={`${apiImg}/w342${curSerie.poster_path}`} alt="img-movie" />
+                                <div className="card-onhover">
+                                    <h2>Nome della serie tv: {curSerie.name}</h2>
+                                    {curSerie.name !== curSerie.original_name && (
+                                        <p>Titolo originale: {curSerie.original_name}</p>
+                                    )}
+                                    <FlagImg language={curSerie.original_language}/>
+                                    <StarVote vote={curSerie.vote_average}/>
+                                </div>
+                            </div>
                         ))) : search && (<p>Nessun risultato</p>)
-                    }
+                        }
+                    </div>
                 </div>
-                <div>
-                    {tvseries.length > 0 ? (tvseries.map((curSerie, index) => (
-                        <div key={index}>
-                            <img src={`${apiImg}/w342${curSerie.poster_path}`} alt="img-movie" />
-                            <h2>Nome della serie tv: {curSerie.name}</h2>
-                            {curSerie.name !== curSerie.original_name && (
-                                <p>Titolo originale: {curSerie.original_name}</p>
-                            )}
-                            <FlagImg language={curSerie.original_language}/>
-                            <StarVote vote={curSerie.vote_average}/>
-                        </div>
-                    ))) : search && (<p>Nessun risultato</p>)
-                    }
-                </div>
-            </div>
+            </section>
             
         </main>
     )

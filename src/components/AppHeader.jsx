@@ -19,15 +19,15 @@ function Header () {
                 </div>
 
                 <div className="flex input-div">
-                    <label>Cerca</label>
                     <input
                     type=""
                     value={search}
                     onChange={handleInput}
                     aria-label= "Cerca film o serie tv"
-                    placeholder="Scrivi qui il tuo film o serie tv...">
+                    placeholder="Cerca il tuo film o serie tv..."
+                    className="search-input">
                     </input>
-                    <button className="" type="submit" onClick={handleSearch}>Cerca</button>
+                    <button className="search-button" type="submit" onClick={handleSearch}>Cerca</button>
                 </div>
             </div>
         </header>
