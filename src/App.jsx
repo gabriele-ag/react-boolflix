@@ -1,3 +1,4 @@
+import { UseContent } from "./contexts/GlobalContext.jsx"
 import Header from "./components/AppHeader"
 import Main from "./components/AppMain"
 
@@ -5,8 +6,10 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <Main/>
+      <UseContent>
+        <Header/>
+        <Main/>
+      </UseContent>
     </>
   )
 }

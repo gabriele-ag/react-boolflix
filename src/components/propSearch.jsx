@@ -1,9 +1,9 @@
 function SearchContent({search, input, click}) {
-        
+
     return (
     
     <div className="flex input-div">
-        <label>Cerca il tuo film o la serie tv</label>
+        <label>Cerca</label>
         <input
         type=""
         value={search}

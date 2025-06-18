@@ -69,6 +69,8 @@ header {
 
 /* MAIN */
 /* Hero section */
+
+
 .hero-section {
     padding-top: 500px;
     padding-bottom: 50px;
@@ -103,7 +105,18 @@ header {
     border: 1px solid rgb(214, 52, 52);
 }
 
-/* Search section */
-.input-div {
-    padding: 40px 0;
+.hero-button-2 {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-left: 20px;
+    color: rgb(43, 43, 43);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
 }
+
+
+/* Search section */
+
+
