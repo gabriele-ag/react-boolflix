@@ -1,17 +1,21 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
 import FlagImg from "../components/propImg"
+import StarVote from "./propStarVote"
+// import {MovieListContext} from "../contexts/GlobalContext"
 
 
 
 function Main() {
+
+    // const {movie} = useContext(MovieListContext)
     const [movie, setMovie] = useState([])
     const [tvseries, setTvSeries] = useState([])
     const [search, setSearch] = useState("")
     const [query, setQuery] = useState("")
-    const [error, setError] = useState(false)
+    // const [error, setError] = useState(false)
 
-    const apiKey="05f25a38e80d3f281215e0480061a071"
+    const apiKey = import.meta.env.VITE_API_KEY
     const apiUrl="https://api.themoviedb.org/3/search/movie"
     const apiUrl2 = "https://api.themoviedb.org/3/search/tv"
     const apiImg= "https://image.tmdb.org/t/p/"
@@ -49,13 +53,13 @@ function Main() {
 
     return (
         <main>
-
                 <label>Cerca il tuo film o la serie tv</label>
                 <input
                 type=""
                 value={search}
                 onChange={handleInput}
-                placeholder="Search Movie"
+                aria-label= "Cerca film o serie tv"
+                placeholder="Scrivi qui il tuo film o serie tv..."
                 ></input>
                 <button type="submit" onClick={handleSearch}>Cerca</button>
 
@@ -66,12 +70,13 @@ function Main() {
                             <img src={`${apiImg}/w342${curMovie.poster_path}`} alt="img-movie" />
                             <h2>Nome del film: {curMovie.title}</h2>
                             {curMovie.title !== curMovie.original_title && (
-                                <p>Titolo originale: {curMovie.original_title}</p>
+                            <p>Titolo originale: {curMovie.original_title}</p>
                             )}
                             <FlagImg language={curMovie.original_language}/>
-                            <p>Voto: {curMovie.vote_average / 2}</p>
+                            <StarVote vote={curMovie.vote_average}/>
                         </div>
-                    ))}
+                        ))
+                    }
                 </div>
                 <div>
                     {tvseries.map((curSerie, index) => (
@@ -82,7 +87,7 @@ function Main() {
                                 <p>Titolo originale: {curSerie.original_name}</p>
                             )}
                             <FlagImg language={curSerie.original_language}/>
-                            <p>Voto: {Math.ceil(curSerie.vote_average / 2)}</p>
+                            <StarVote vote={curSerie.vote_average}/>
                         </div>
                     ))}
                 </div>
