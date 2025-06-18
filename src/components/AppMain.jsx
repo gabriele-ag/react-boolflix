@@ -1,18 +1,14 @@
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import axios from "axios"
 import FlagImg from "../components/propImg"
 import StarVote from "./propStarVote"
-// import {MovieListContext} from "../contexts/GlobalContext"
-
-
 
 function Main() {
 
-    // const {movie} = useContext(MovieListContext)
+
     const [movie, setMovie] = useState([])
     const [tvseries, setTvSeries] = useState([])
     const [search, setSearch] = useState("")
-    const [query, setQuery] = useState("")
     // const [error, setError] = useState(false)
 
     const apiKey = import.meta.env.VITE_API_KEY
@@ -20,36 +16,39 @@ function Main() {
     const apiUrl2 = "https://api.themoviedb.org/3/search/tv"
     const apiImg= "https://image.tmdb.org/t/p/"
 
-    useEffect(() => {
+    const searchFilm = () => {
+        if (search) {
             axios
-                .get(`${apiUrl}?api_key=${apiKey}&query=${query}`)
+                .get(`${apiUrl}?api_key=${apiKey}&query=${search}`)
                 .then((resp) => {
                 const movieList = resp.data.results
                 console.log(`Ecco la lista dei film`, movieList)
                 setMovie(movieList)
                 })
-    }, [query])
+        }
+    }
 
-     useEffect(() => {
-            axios
-                .get(`${apiUrl2}?api_key=${apiKey}&query=${query}`)
-                .then((resp) => {
-                const seriesList = resp.data.results
-                console.log(`Ecco la lista delle serie tv`, seriesList)
-                setTvSeries(seriesList)
-                })
-    }, [query])
-    
+    const searchTvSeries = () => {
+        if (search) {
+        axios
+            .get(`${apiUrl2}?api_key=${apiKey}&query=${search}`)
+            .then((resp) => {
+            const seriesList = resp.data.results
+            console.log(`Ecco la lista delle serie tv`, seriesList)
+            setTvSeries(seriesList)
+            })
+        }
+    }
 
     const handleInput = (event) => {
         setSearch(event.target.value)
     }
 
     const handleSearch = () => {
-        if (search) {
-            setQuery(search)
-        }
+        searchFilm()
+        searchTvSeries()
     }
+
 
     return (
         <main>
@@ -65,7 +64,7 @@ function Main() {
 
             
                 <div>
-                    {movie.map((curMovie, index) => (
+                    {movie.length > 0 ? (movie.map((curMovie, index) => (
                         <div key={index}>
                             <img src={`${apiImg}/w342${curMovie.poster_path}`} alt="img-movie" />
                             <h2>Nome del film: {curMovie.title}</h2>
@@ -75,7 +74,7 @@ function Main() {
                             <FlagImg language={curMovie.original_language}/>
                             <StarVote vote={curMovie.vote_average}/>
                         </div>
-                        ))
+                        ))) : (<p>Nessun risultato</p>)
                     }
                 </div>
                 <div>
