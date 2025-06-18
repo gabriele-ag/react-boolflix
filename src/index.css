@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Common */
+
+.container {
+    padding: 0;
+    margin: auto;
+    max-width: 80%;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Utilities */
+
+.m-top-10 {
+    margin-top: 10px;
+}
+
+.m-top-20 {
+    margin-top: 20px;
+}
+
+/* HEADER */
+header {
+    padding: 15px 50px;
+    height: 60px;
+    background-color: rgb(29, 29, 29);
+}
+
+.header-nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    gap: 25px;    
+}
+
+.nav-link a {
+    color: azure;
+}
+
+.nav-link a:hover {
+    color: rgb(214, 52, 52);
+}
+
+.logo-nav {
+    width: 110px;
+}
+
+
+/* MAIN */
+/* Hero section */
+.hero-section {
+    padding-top: 500px;
+    padding-bottom: 50px;
+    background-image: url(../public/img/cover-desktop@1x-7e66501a.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-box {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+.hero-title {
+    color: white;
+}
+
+.hero-text {
+    color: white;
+}
+
+.hero-button {
+    background-color: rgb(214, 52, 52);
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 52, 52);
+}
+
+/* Search section */
+.input-div {
+    padding: 40px 0;
+}

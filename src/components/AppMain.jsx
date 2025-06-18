@@ -2,6 +2,7 @@ import {useState} from "react"
 import axios from "axios"
 import FlagImg from "../components/propImg"
 import StarVote from "./propStarVote"
+import SearchContent from "./propSearch"
 
 function Main() {
 
@@ -52,15 +53,30 @@ function Main() {
 
     return (
         <main>
-                <label>Cerca il tuo film o la serie tv</label>
-                <input
-                type=""
-                value={search}
-                onChange={handleInput}
-                aria-label= "Cerca film o serie tv"
-                placeholder="Scrivi qui il tuo film o serie tv..."
-                ></input>
-                <button type="submit" onClick={handleSearch}>Cerca</button>
+            <section className="hero-section">
+                <div className="container hero-box">
+                    <h1 className="hero-title">Cyberpunk: Edgerunners</h1>
+                    <p className="hero-text m-top-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima, perferendis iste magnam dolor quia, explicabo libero quisquam ipsum ad qui ea! Quas ex mollitia deserunt consequatur dignissimos asperiores doloribus?</p>
+                    <button className="hero-button m-top-20">Scopri di più</button>
+                </div>
+            </section>
+            <div className="container">
+                {/* <div className="flex input-div">
+                    <label>Cerca il tuo film o la serie tv</label>
+                    <input
+                    type=""
+                    value={search}
+                    onChange={handleInput}
+                    aria-label= "Cerca film o serie tv"
+                    placeholder="Scrivi qui il tuo film o serie tv..."
+                    ></input>
+                    <button className="" type="submit" onClick={handleSearch}>Cerca</button>
+                </div> */}
+                <SearchContent
+                search={search}
+                input={handleInput}
+                click={handleSearch}/>
+
 
             
                 <div>
@@ -74,11 +90,11 @@ function Main() {
                             <FlagImg language={curMovie.original_language}/>
                             <StarVote vote={curMovie.vote_average}/>
                         </div>
-                        ))) : (<p>Nessun risultato</p>)
+                        ))) : search && (<p>Nessun risultato</p>)
                     }
                 </div>
                 <div>
-                    {tvseries.map((curSerie, index) => (
+                    {tvseries.length > 0 ? (tvseries.map((curSerie, index) => (
                         <div key={index}>
                             <img src={`${apiImg}/w342${curSerie.poster_path}`} alt="img-movie" />
                             <h2>Nome della serie tv: {curSerie.name}</h2>
@@ -88,8 +104,10 @@ function Main() {
                             <FlagImg language={curSerie.original_language}/>
                             <StarVote vote={curSerie.vote_average}/>
                         </div>
-                    ))}
+                    ))) : search && (<p>Nessun risultato</p>)
+                    }
                 </div>
+            </div>
             
         </main>
     )
