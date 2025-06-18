@@ -1,6 +1,7 @@
 import { UseContent } from "./contexts/GlobalContext.jsx"
 import Header from "./components/AppHeader"
 import Main from "./components/AppMain"
+import Footer from "./components/AppFooter.jsx"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <UseContent>
         <Header/>
         <Main/>
+        <Footer/>
       </UseContent>
     </>
   )

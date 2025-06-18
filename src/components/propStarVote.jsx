@@ -11,7 +11,8 @@ function StarVote({vote}) {
 
 
     return (
-        <div>
+        <div className="m-bottom-20">
+            <h4>Voto</h4>
             {starFull}
             {starEmpty}
         </div>
