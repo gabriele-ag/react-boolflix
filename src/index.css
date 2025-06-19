@@ -145,7 +145,7 @@ header {
 
 .hero-section {
     position: relative;
-    padding-top: 600px;
+    padding-top: 500px;
     padding-bottom: 50px;
     /* background-image: url(../public/img/cover-desktop@1x-7e66501a.jpg);
     background-repeat: no-repeat;
@@ -178,6 +178,8 @@ header {
     position: relative;
     padding: 20px;
     border-radius: 30px;
+    max-width: 60%;
+    margin-left: 100px;
 }
 
 .hero-title {
