@@ -15,7 +15,7 @@ function Main() {
         <main>
             <section className="hero-section">
                     <video autoPlay loop muted plays-inline="true" className="hero-video">
-                        <source src="../../public/Cyberpunk Edgerunners — Official Teaser  Netflix.mp4" type="video/mp4"/>
+                        <source src="/Cyberpunk Edgerunners — Official Teaser  Netflix.mp4" type="video/mp4"/>
                     </video>
                 <div className="container hero-box">
                     <h1 className="hero-title">Cyberpunk: Edgerunners</h1>
@@ -26,7 +26,7 @@ function Main() {
             </section>
 
             <section className="section-search">
-                <div className="card-section container">
+                <div className="card-section">
                     <h2 className="category-title m-bottom-30">Film</h2>
                     <div className="box flex">
                         {movie.length > 0 ? (movie.map((curMovie, index) => (
