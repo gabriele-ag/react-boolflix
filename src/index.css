@@ -21,7 +21,8 @@ img {
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
 }
 
 a {
@@ -146,10 +147,21 @@ header {
     position: relative;
     padding-top: 600px;
     padding-bottom: 50px;
-    background-image: url(../public/img/cover-desktop@1x-7e66501a.jpg);
+    /* background-image: url(../public/img/cover-desktop@1x-7e66501a.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero-section::before {
@@ -223,7 +235,7 @@ header {
 
 .card {
     position: relative;
-    overflow: hidden;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
 }
 
 .card-onhover {

@@ -14,6 +14,9 @@ function Main() {
     return (
         <main>
             <section className="hero-section">
+                    <video autoPlay loop muted plays-inline="true" className="hero-video">
+                        <source src="../../public/Cyberpunk Edgerunners — Official Teaser  Netflix.mp4" type="video/mp4"/>
+                    </video>
                 <div className="container hero-box">
                     <h1 className="hero-title">Cyberpunk: Edgerunners</h1>
                     <p className="hero-text m-top-10 m-bottom-20">Cyberpunk: Edgerunners narra una storia in 10 episodi di un solitario da strada che cerca di sopravvivere in una città del futuro ossessionata dalla tecnologia e dalle modifiche cibernetiche. Con tutto da perdere, decide di sopravvivere diventando un edgerunner, un fuorilegge mercenario noto anche come cyberpunk</p>
